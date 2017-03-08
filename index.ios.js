@@ -5,48 +5,26 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TouchableHighlight
-} from 'react-native';
+import { AppRegistry, StyleSheet, View } from 'react-native';
 
-export default class TODO extends Component {
-  constructor() {
-    super()
-    this.state = {
-      todos: [1,2,3],
-      newTodo: ''
-    }
-  }
-  handleChange(e) {
-    const { value } = e.target
-    this.setState({newTodo: value})
-  }
-  handlePress() {
+import { Todo } from './src/app/Todo'
 
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <TextInput value={this.state.newTodo}
-          <TouchableHighlight onPress={this.handlePress.bind(this)}>
-            <Text>Tap Me!</Text>
-          </TouchableHighlight>
-            style={{height: 40}}
-            placeholder="Type here to translate!"
-            onChangeText={this.handleChange.bind(this)}
-        />
+const Main = () => (
+  <View style={styles.container}>
+    <Todo />
+  </View>
+)
 
-        {this.state.todos.map((todo, i) => <Text key={i}>{todo}</Text>)}
-
-      </View>
-    );
-  }
-}
+// Most popular option; but, the above is good too.
+// export default class Main extends Component {
+//     render() {
+//     return (
+//       <View style={styles.container}>
+//         <Todo />
+//       </View>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
   container: {
@@ -67,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('TODO', () => TODO);
+AppRegistry.registerComponent('TODO', () => Main);
