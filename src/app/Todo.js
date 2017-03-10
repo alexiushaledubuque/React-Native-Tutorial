@@ -6,6 +6,8 @@ import {
   TouchableOpacity
 } from 'react-native'
 
+import { styles } from './src/app/styles'
+
 export class Todo extends Component {
   constructor() {
     super()
@@ -23,19 +25,20 @@ export class Todo extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.container}>
+        <Text style={styles.text}>Lexi To Do List</Text>
         <TextInput
             value={this.state.newTodo}
-            style={{height: 40}}
+            style={styles.input}
             placeholder="Type here to translate!"
             onChangeText={this.handleChange.bind(this)}
         />
         <TouchableOpacity onPress={this.handlePress.bind(this)}>
-          <Text>Make</Text>
+          <Text style={styles.button}>Add to List</Text>
         </TouchableOpacity>
         <View>
           {this.state.todos.map((todo, i) => (
-            <Text key={i}>{todo}</Text>
+            <Text style={styles.list} key={i}>{i + 1}. {todo}</Text>
           ))}
         </View>
       </View>

@@ -7,11 +7,13 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, View } from 'react-native';
 
-import { Todo } from './src/app/Todo'
+import { Reddit } from './src/app/Reddit'
+//import { Todo } from './src/app/Todo'
+//import { Fancy } from './src/app/Fancy'
 
 const Main = () => (
   <View style={styles.container}>
-    <Todo />
+    <Reddit />
   </View>
 )
 
@@ -29,8 +31,6 @@ const Main = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
